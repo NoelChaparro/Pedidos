@@ -2,4 +2,5 @@
 - Make folder and inside download from docker hub:
 - $ docker pull noelchaparroflores/mobilender-pedidos:latest
 - $ git clone git@github.com:NoelChaparro/Pedidos.git
+- $ docker run noelchaparroflores/mobilender
 - $ docker-compose up --build -d
