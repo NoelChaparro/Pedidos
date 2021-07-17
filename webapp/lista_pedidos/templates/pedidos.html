@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block head_title %} Pedidos Urgentes {% endblock head_title %}
+
+{% block contenido %}
+<h2>Lista de pedidos urgentes</h2>
+
+<table width=100%, border=1px>
+	<tr>
+	    <th>Numero de Pedido</th>
+	    <th>Cliente</th>
+	    <th>Fecha Creacion</th>
+	    <th>Fecha Surtido</th>
+	    <th>Urgente</th>
+	    <th>Tipo Pedido</th>
+	</tr>
+	{% for pedido in pedidos %}
+		<tr>
+    		<td>{{ pedido.numero_pedido }}</td>
+    		<td>{{ pedido.cliente }}</td>
+    		<td>{{ pedido.fecha_creacion }}</td>
+    		<td>{{ pedido.fecha_surtido }}</td>
+    		<td>{{ pedido.urgente }}</td>
+    		<td>{{ pedido.tipo_pedido }}</td>
+		</tr>
+	{% endfor %}
+</table>
+
+<p>
+	<a href="{% url 'home' %}">Home</a>
+</p>
+
+{% endblock %}

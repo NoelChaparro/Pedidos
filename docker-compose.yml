@@ -1,0 +1,29 @@
+version: "3.9"
+
+services:
+ db:
+  extends:
+    file: base.yml
+    service: db
+  ports:
+    - "5432:5432"
+
+ web:
+  extends:
+    file: base.yml
+    service: web
+  build:
+    args:
+      - DJANGO_ENV=dev
+  command: python3 manage.py runserver 0.0.0.0:8000
+  volumes:
+    - ./webapp:/webapp
+  ports:
+    - "8000:8000"
+  depends_on:
+    - db
+  image: noelchaparroflores/mobilender-pedidos
+
+volumes:
+ db_data:
+  external: true

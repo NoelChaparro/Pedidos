@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block head_title %} Mobilender {% endblock head_title %}
+
+{% block contenido %}
+
+<div>
+    <h2>Home</h2>
+    <h3>Mobilender</h3>
+</div>
+
+<ul>
+	<li><a href="{% url 'crear-pedido' %}">Crear Pedido</a></li>
+	<li><a href="{% url 'pedidos-urgentes' %}">Pedidos Urgentes</a></li>
+</ul>
+
+{% endblock contenido %}

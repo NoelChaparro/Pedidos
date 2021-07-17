@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block head_title %} Mobilender {% endblock head_title %}
+
+{% block contenido %}
+
+<strong>Detalle Pedido: {{ numero_pedido }}</strong>
+
+<form method="post" action="" accept-charset="utf-8">
+	{% csrf_token %}
+	<input type='hidden' name='numero_pedido' id="numero_pedido" value='{{ numero_pedido }}' />
+
+	<table width=100%, border=1px>
+	<tr>
+	    <th>Articulo</th>
+	    <th>Cantidad</th>
+	</tr>
+	{% for detalle_pedido in detalle_pedidos %}
+		<tr>
+    		<td>{{ detalle_pedido.articulo }}</td>
+    		<td>{{ detalle_pedido.cantidad_articulos }}</td>
+		</tr>
+	{% endfor %}
+	<tr>
+		<td>{{ formulario_detalle_pedido.articulo }}</td>
+		<td>{{ formulario_detalle_pedido.cantidad_articulos }}</td>
+	</tr>
+	
+	</table>
+
+	<button type="submit">Agregar</button>
+	<a href="{% url 'home' %}">Terminar</a>
+
+</form>
+
+
+{% endblock contenido %}

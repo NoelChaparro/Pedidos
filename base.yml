@@ -1,0 +1,13 @@
+version: "3.9"
+
+services:
+  db:
+    image: postgres
+    env_file: .env
+    volumes:
+      - ./data/db:/var/lib/postgresql/data
+
+  web:
+    build:
+      context: ./webapp
+    env_file: .env

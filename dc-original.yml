@@ -1,0 +1,25 @@
+version: "3.9"
+   
+services:
+  db:
+    image: postgres
+    volumes:
+      - ./data/db:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_DB=mobilender
+      - POSTGRES_USER=developer
+      - POSTGRES_PASSWORD=Passw0rd
+      - PGDATA=/var/lib/postgresql/data
+  web:
+    build: ./webapp
+    command: python3 manage.py runserver 0.0.0.0:8000
+    volumes:
+      - ./webapp:/webapp
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+
+volumes:
+  db_data:
+    external: true

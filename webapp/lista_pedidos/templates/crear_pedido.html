@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block head_title %} Mobilender {% endblock head_title %}
+
+{% block contenido %}
+
+<strong>Crear Pedido</strong>
+
+<form method="post" action="" accept-charset="utf-8">
+	{% csrf_token %}
+
+	Cliente: {{ formulario_pedido.cliente }} <br>
+	Fecha Surtido: {{ formulario_pedido.fecha_surtido }} <br>
+	Urgente: {{ formulario_pedido.urgente }} <br>
+	Tipo Pedido: {{ formulario_pedido.tipo_pedido }} <br>
+
+	<button type="submit">Crear</button>
+
+</form>
+
+<p>
+	<a href="{% url 'home' %}">Home</a>
+</p>
+
+{% endblock contenido %}
