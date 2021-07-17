@@ -1,0 +1,9 @@
+- La documentacion de las APIS en Swagger se encuentran en: /swagger y redoc/
+- Se usaron Test a modelos y API, pueden correrlos con: $docker-compose run web python manage.py test
+- Se dejo en admin todos los modelos para dar de alta clientes, articulos y proveedores.
+- Para entrar al administrador a la url: admin/
+- Crear un superuser: docker-compose run web python manage.py createsuperuser
+- En raiz esta el html que solamente lista los pedidos urgentes y levanta nuevos pedidos.
+- Subi la base de datos tambien con datos de prueba, si se desea borrar todo solamente es eliminar las migraciones y correr:
+$ docker-compose run web python manage.py makemigrations
+$ docker-compose run web python manage.py migrate
