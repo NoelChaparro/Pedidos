@@ -7,3 +7,6 @@
 - Subi la base de datos tambien con datos de prueba, si se desea borrar todo solamente es eliminar las migraciones y correr:
 $ docker-compose run web python manage.py makemigrations
 $ docker-compose run web python manage.py migrate
+
+- Librerias para los casos de prueba: TestCase de django y APITestCase del DRF.
+- Framework frontend, utilizar Angular con Devextreme para el diseño de formularios e intercambio de datos utilizando las API's de la base de datos.
